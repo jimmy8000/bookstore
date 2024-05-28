@@ -1,0 +1,25 @@
+{% load static %}
+<head> 
+    <link rel="stylesheet" type="text/css" href="{% static 'sales/style.css' %}">
+</head>
+
+<!DOCTYPE html>
+<div class="records-head-container">
+   <h1>Search for sales records</h1>
+   <a href="{%url 'logout' %}">Log out</a>
+</div>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">search</button>
+</form>
+
+<br>
+{% if sales_df %}
+   {{sales_df|safe}}
+   <br>
+<img src="data:image/png;base64, {{chart|safe}}" alt="Sales Chart">
+{% else %}
+   <h3> no data</h3>
+{% endif %}

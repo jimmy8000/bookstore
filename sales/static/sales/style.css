@@ -1,0 +1,9 @@
+h1 {
+    color: blue;
+    text-align:center
+ }
+ .records-head-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+ }
